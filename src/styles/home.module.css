@@ -1,0 +1,199 @@
+
+.body{
+    display: flex;
+    margin: -10px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+.userHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.companyName{
+    font-size: 24px;
+}
+
+.userProfile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.userContentContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.userAside{
+    background-color: #f4f4f4;
+    width: 200px;
+    padding: 20px;
+}
+.userAside nav{
+    margin-top: 20px;
+    position: fixed
+}
+
+.userAside nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.userAaside nav li {
+    margin-bottom: 10px;
+}
+
+.navLink {
+    transition: all ease .2s;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    color: #000;
+    border-radius: 10px;
+}
+.navLink:hover,
+#active{
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.userContent {
+    padding: 20px;
+}
+
+.userContent h2 {
+    font-size: 24px;
+}
+
+.progressingCourses {
+    margin-top: 20px;
+}
+
+.progressingCourses h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.progressingCourses ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.progressingCourses li {
+    margin-bottom: 5px;
+}
+
+.progressBar {
+    margin-top: 20px;
+    background-color: #f4f4f4;
+    height: 20px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background-color: #007bff;
+    border-radius: 10px 0 0 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.remainingPoints{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 10px;
+    line-height: 20px;
+    color: #007bff;
+}
+
+
+.coursePanel {
+    margin-top: 20px;
+}
+
+.courses {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.course {
+    width: 200px;
+    margin-bottom: 20px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin: 10px;
+}
+
+.course h4 {
+    font-size: 18px;
+}
+
+.course p {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+    overflow-y: hidden;
+}
+
+.courseButton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.courseButton:hover {
+    background-color: #0056b3;
+}
+
+.courseImage {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%; /* Maintain a square aspect ratio */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.discoverMore{
+    margin-top: 20px;
+}
+
+.improvementAreas {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.area {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    box-shadow: 0px 2px 2px #999;
+    border-radius: 10px;
+    transition: all ease .2s;
+}
+.area:hover{
+    background-color: #007bff;
+}
+.areaIcon {
+    font-size: 20px;
+    margin-right: 10px;
+}
