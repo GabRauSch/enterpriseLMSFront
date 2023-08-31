@@ -1,5 +1,5 @@
-import styles from "../styles/home.module.css";
-import { AsideOption } from "./AsideOption";
+import styles from "@/styles/homeAside.module.css";
+import { AsideOption } from "@/components/AsideOption";
 
 type Props = {
     active: string

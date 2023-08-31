@@ -1,4 +1,5 @@
-import styles from "../styles/home.module.css";
+import styles from "../styles/course.module.css";
+import { StudyNowButton } from "@/components/StudyNowButton";
 
 type Props = {
     backgroundImage: string,
@@ -14,7 +15,7 @@ export const Course = ({backgroundImage, name, description, progress}: Props)=>{
             <h4>{name}</h4>
             <p>{progress}</p>
             <p>{description}</p>
-            <button className={styles.courseButton}>Study Now</button>
+            <StudyNowButton />
         </div>
     )
 }

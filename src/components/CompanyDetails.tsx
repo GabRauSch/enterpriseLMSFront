@@ -1,4 +1,4 @@
-import styles from '../styles/company.module.css';
+import styles from '@/styles/companyDetails.module.css';
 
 type Props = {
     companyName: string,

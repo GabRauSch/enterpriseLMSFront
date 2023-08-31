@@ -1,0 +1,12 @@
+.courseButton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.courseButton:hover {
+    background-color: #0056b3;
+}

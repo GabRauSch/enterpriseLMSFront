@@ -1,0 +1,8 @@
+
+.coursePanel {
+    margin-top: 20px;
+}
+.courses {
+    display: flex;
+    flex-wrap: wrap;
+}

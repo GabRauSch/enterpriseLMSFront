@@ -1,13 +1,17 @@
-import styles from "../styles/home.module.css";
+import styles from '../styles/homeHeader.module.css'
 
-export const HomeHeader = ()=>{
+type Props = {
+    companyName: string
+}
+
+export const HomeHeader = ({companyName}: Props)=>{
     return (
         <header className={styles.userHeader}>
             <div className={styles.companyName}>
-                Intelbras
+                {companyName}
             </div>
-            <div className={styles.userProfile}>
-                {/* <img src="profile.jpg" alt="User Profile"> */}
+            <div className={styles.userProfile} style={{backgroundColor: "red"}}>
+                <img src="/profile.jpg" alt="User Profile" />
             </div>
         </header>
     )

@@ -1,8 +1,12 @@
 import { HomeAside } from '@/components/HomeAside';
-import styles from '../styles/company.module.css';
 import { HomeHeader } from '@/components/HomeHeader';
 import {CompanyInfo} from '@/components/CompanyInfo'
 import { Segment } from '@/components/Segment';
+
+import styles from '@/styles/company.module.css';
+import { GetServerSidePropsContext } from 'next';
+import checkAuthentication from '@/helpers/checkAuth';
+import { parse } from 'cookie';
 
 const Company = () => {
     return (
@@ -10,7 +14,7 @@ const Company = () => {
             <HomeAside active="Company"/>
     
             <div className={styles.userContentContainer}>
-                <HomeHeader />
+                <HomeHeader companyName='Jubileu'/>
                 <main className={styles.userContent}>
                     <div className={styles.companyPanel}>
                         <CompanyInfo />
@@ -31,5 +35,24 @@ const Company = () => {
         </div>
     );
 };
+
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const cookies: any = parse(context.req.headers.cookie || '');
+  const token = cookies.access_token || null;
+  
+  if (!token) {
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {}
+  };
+}
 
 export default Company;

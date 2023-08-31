@@ -1,4 +1,6 @@
-import styles from '../styles/videoDisplay.module.css';
+import checkAuthentication from '@/helpers/checkAuth';
+import styles from '@/styles/videoDisplay.module.css';
+import { GetServerSidePropsContext } from 'next';
 
 const videoDisplay = ()=>{
     // function onYouTubeIframeAPIReady() {
@@ -134,5 +136,23 @@ const videoDisplay = ()=>{
 
     )
 }
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+    const isAuthenticated = await checkAuthentication(context);
+  
+    if (!isAuthenticated) {
+      return {
+        redirect: {
+          destination: '/login',
+          permanent: false,
+        },
+      };
+    }
+  
+    return {
+      props: {}
+    };
+  }
+
 
 export default videoDisplay
