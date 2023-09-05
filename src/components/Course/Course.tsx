@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
-import styles from "../styles/course.module.css";
-import { StudyNowButton } from "@/components/StudyNowButton";
+import styles from "@/styles/course.module.css";
+import { StudyNowButton } from "@/components/Buttons/StudyNowButton";
 
 type Props = {
     backgroundImage: string,

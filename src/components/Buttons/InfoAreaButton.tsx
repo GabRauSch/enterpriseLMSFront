@@ -1,4 +1,4 @@
-import styles from '../styles/infoAreaButton.module.css'
+import styles from '@/styles/infoAreaButton.module.css'
 
 type Props = {
     name: string

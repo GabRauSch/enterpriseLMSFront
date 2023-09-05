@@ -1,13 +1,14 @@
+import styles from '@/styles/search.module.css'
+
 import { getCompanyById } from "@/apis/Company"
 import { getUserAquisitions } from "@/apis/Subscriptions"
 import { getUserById } from "@/apis/User"
-import { SearchBar } from "@/components/SearchBar"
+import { SearchBar } from "@/components/Bars/SearchBar"
 import { getUserIdFromToken } from "@/helpers/decodeToken"
 import {parse} from 'cookie'
 import { GetServerSidePropsContext } from "next"
-import styles from '@/styles/search.module.css'
-import { HomeAside } from "@/components/HomeAside"
-import { SearchFilter } from "@/components/SearchFilter"
+import { HomeAside } from '@/components/Aside/HomeAside'
+import { SearchFilter } from '@/components/Search/SearchFilter'
 
 type SearchProps = {
     user: any,
@@ -39,7 +40,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     if (!token) {
       return {
         redirect: {
-          destination: '/login',
+          destination: '/auth/login',
           permanent: false,
         },
       };
@@ -49,7 +50,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     if(!userId){
       return {
         redirect: {
-          destination: '/login',
+          destination: '/auth/login',
           permanent: false,
         },
       };

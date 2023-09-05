@@ -1,4 +1,4 @@
-import styles from '../styles/segment.module.css';
+import styles from '@/styles/segment.module.css';
 type Props = {
     icon: string,
     segmentName: string

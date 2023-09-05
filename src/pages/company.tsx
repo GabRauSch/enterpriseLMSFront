@@ -1,18 +1,16 @@
-import { HomeAside } from '@/components/HomeAside';
-import { HomeHeader } from '@/components/HomeHeader';
-import {CompanyInfo} from '@/components/CompanyInfo'
-import { Segment } from '@/components/Segment';
 
 import styles from '@/styles/company.module.css';
 import { GetServerSidePropsContext } from 'next';
-import checkAuthentication from '@/helpers/checkAuth';
 import { parse } from 'cookie';
 import { getUserIdFromToken } from '@/helpers/decodeToken';
 import { getUserById, getUsersByCompanyId } from '@/apis/User';
-import { countEmployees, getCompanyById } from '@/apis/Company';
-import { getUserAquisitions } from '@/apis/Subscriptions';
+import { getCompanyById } from '@/apis/Company';
 import { getSegmentsByCompanyId } from '@/apis/Segment';
 import { getPontuationByEmployees } from '@/helpers/Pontuation';
+import { HomeAside } from '@/components/Aside/HomeAside';
+import { HomeHeader } from '@/components/Headers/HomeHeader';
+import { CompanyInfo } from '@/components/Company/CompanyInfo';
+import { Segment } from '@/components/Course/Segment';
 
 type CompanyProps = {
   user: any,
@@ -28,7 +26,6 @@ const Company = ({user, company, segments, employees, subscriptionLevel, pontuat
         <div className={styles.body}>
             <HomeAside active="Company"/>
             <div className={styles.userContentContainer}>
-                <HomeHeader companyName={company.name} profilePhoto={user.profilePhoto}/>
                 <main className={styles.userContent}>
                     <div className={styles.companyPanel}>
                         <CompanyInfo companyName={company.name} employeesCount={employees.length} subscriptionLevel={subscriptionLevel} pontuation={pontuation}/>
@@ -55,7 +52,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   if (!token) {
     return {
       redirect: {
-        destination: '/login',
+        destination: '/auth/login',
         permanent: false,
       },
     };
@@ -66,7 +63,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   if(!userId){
     return {
       redirect: {
-        destination: '/login',
+        destination: '/auth/login',
         permanent: false,
       },
     };

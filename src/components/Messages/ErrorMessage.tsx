@@ -3,7 +3,7 @@ type Props = {
     display: string
 }
 
-export const ErrorPanel = ({errorMessage, display}: Props)=>{
+export const ErrorMessage = ({errorMessage, display}: Props)=>{
     return (
         <div className='errorPanel' style={{display: display}}>
             <div className='errorTitle'>Error:</div>

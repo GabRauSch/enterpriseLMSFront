@@ -1,6 +1,6 @@
-import styles from '../styles/companyInfo.module.css';
+import styles from '@/styles/companyInfo.module.css';
 import { CompanyDetails } from './CompanyDetails';
-import { InfoAreaButton } from './InfoAreaButton';
+import { InfoAreaButton } from '@/components/Buttons/InfoAreaButton';
 
 type Props = {
     companyName: string,

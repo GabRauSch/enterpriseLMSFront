@@ -4,6 +4,7 @@
 }
 body{
     overflow-x: hidden;
+    font-family: Arial, sans-serif;
 }
 
 :root{
@@ -17,17 +18,54 @@ body{
     --transition:  all ease .2s
 }
 .errorPanel{
-    background-color: rgba(200, 30, 30, 0.8);
+    background-color: rgba(200, 30, 30, 0.9);
     position: absolute;
     top: 10px;
     border-radius: 10px;
     padding: 10px;
     color: #fff;
     width: 200px;
+    z-index: 999;
     box-shadow: var(--drop-shadow);
 }
 .errorTitle{
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 10px;
+}
+.confirmMessage-panel{
+    background-color: rgba(0, 0, 0, .8);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+}
+.confirmMessage{
+    background-color: #fff;
+    top: 10px;
+    left: calc(50% - 150px);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    font-size: 18px;
+    box-shadow: var(--drop-shadow);
+    height: fit-content
+}
+
+.confirmMessage-options{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.confirmMessage-option{
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    flex: 1;
+    margin: 5px;
 }

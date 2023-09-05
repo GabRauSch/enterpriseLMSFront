@@ -14,3 +14,18 @@
 .userAaside nav li {
     margin-bottom: 10px;
 }
+
+.logout{
+    transition: var(--transition);
+    display: block;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 100%;
+    cursor: pointer;
+    color: #fff;
+    background-color: var(--contrast-button);
+}
+.logout:hover{
+    background-color: var(--contrast-button-hover);
+}

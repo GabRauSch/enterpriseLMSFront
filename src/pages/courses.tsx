@@ -1,18 +1,15 @@
-import { HomeAside } from '@/components/HomeAside';
-import { HomeHeader } from '@/components/HomeHeader';
-import { Course } from '@/components/Course';
-import { CoursePanel } from '@/components/CoursePanel';
+import { Course } from '@/components/Course/Course';
 
 import styles from '@/styles/courses.module.css';
 import { GetServerSidePropsContext } from 'next';
-import checkAuthentication from '@/helpers/checkAuth';
 import { parse } from 'cookie';
 import { getUserIdFromToken } from '@/helpers/decodeToken';
 import { getUserById } from '@/apis/User';
 import { getCompanyById } from '@/apis/Company';
 import { getUserAquisitions } from '@/apis/Subscriptions';
-import { SearchBar } from '@/components/SearchBar';
-import { FilterOption } from '@/components/FilterOption';
+import { SearchBar } from '@/components/Bars/SearchBar';
+import { HomeAside } from '@/components/Aside/HomeAside';
+import { CoursePanel } from '@/components/Panels/CoursePanel';
 
 type CoursesProps = {
   user: any,
@@ -59,7 +56,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   if (!token) {
     return {
       redirect: {
-        destination: '/login',
+        destination: '/auth/login',
         permanent: false,
       },
     };
@@ -69,7 +66,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   if(!userId){
     return {
       redirect: {
-        destination: '/login',
+        destination: '/auth/login',
         permanent: false,
       },
     };

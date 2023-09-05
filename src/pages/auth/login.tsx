@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { loginUser } from '@/apis/Auth';
-import styles from '../styles/login.module.css';
-import stylesRe from '../styles/submitButton.module.css';
+import styles from '@/styles/login.module.css';
+import stylesRe from '@/styles/submitButton.module.css';
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
 import { getUserIdFromToken } from '@/helpers/decodeToken';
-import { ErrorPanel } from '@/components/ErrorPanel';
+import { ErrorMessage } from '@/components/Messages/ErrorMessage';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -58,7 +58,7 @@ const Login = () => {
           <input type="submit" className={stylesRe.submitButton}onClick={(e) => {handleSubmit(e);}} value="login"/>
         </form>
       </div>
-      <ErrorPanel errorMessage={errorMessage} display={errorMessage ? 'block' : 'none'} />
+      <ErrorMessage errorMessage={errorMessage} display={errorMessage ? 'block' : 'none'} />
 
     </div>
   );

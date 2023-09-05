@@ -1,4 +1,4 @@
-import styles from '../styles/module.module.css'
+import styles from '@/styles/module.module.css'
 import { VideoLink } from './VideoLink'
 
 type Props = {

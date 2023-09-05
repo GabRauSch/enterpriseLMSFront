@@ -1,8 +1,4 @@
-import { HomeHeader } from '@/components/HomeHeader';
-import { HomeAside } from '@/components/HomeAside';
-import { ProgressBar } from '@/components/ProgressBar';
-import { ProfileInfo } from '@/components/ProfileInfo';
-import { Segment } from '@/components/Segment';
+import { HomeHeader } from '@/components/Headers/HomeHeader';
 
 import styles from '@/styles/profile.module.css';
 import { GetServerSidePropsContext } from 'next';
@@ -12,6 +8,9 @@ import { getUserIdFromToken } from '@/helpers/decodeToken';
 import { getCompanyById } from '@/apis/Company';
 import { getUserById } from '@/apis/User';
 import { getUserAquisitions } from '@/apis/Subscriptions';
+import { ProfileInfo } from '@/components/User/ProfileInfo';
+import { ProgressBar } from '@/components/Bars/ProgressBar';
+import { HomeAside } from '@/components/Aside/HomeAside';
 
 type ProfileProps = {
   company: any,
@@ -54,7 +53,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   if (!token) {
     return {
       redirect: {
-        destination: '/login',
+        destination: '/auth/login',
         permanent: false,
       },
     };
@@ -64,7 +63,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   if(!userId){
     return {
       redirect: {
-        destination: '/login',
+        destination: '/auth/login',
         permanent: false,
       },
     };

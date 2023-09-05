@@ -1,4 +1,4 @@
-// import styles from '../styles/submitButton.module.css'
+// import styles from '@/styles/submitButton.module.css'
 // interface SubmitButtonProps {
 //     action: string;
 //     onClick: (e: React.FormEvent) => void;

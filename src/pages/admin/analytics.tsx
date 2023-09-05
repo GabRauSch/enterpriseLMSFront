@@ -1,5 +1,4 @@
 import styles from "@/styles/home.module.css";
-import { Course } from "@/components/Course/Course";
 import { useRouter } from "next/router";
 import { GetServerSidePropsContext } from "next";
 
@@ -8,11 +7,6 @@ import { getUserById } from "@/apis/User";
 import { getUserIdFromToken } from "@/helpers/decodeToken";
 import { getCompanyById } from "@/apis/Company";
 import { getUserAquisitions } from "@/apis/Subscriptions";
-import { SearchBar } from "@/components/Bars/SearchBar";
-import { HomeAside } from "@/components/Aside/HomeAside";
-import { ProgressBar } from "@/components/Bars/ProgressBar";
-import { CoursePanel } from "@/components/Panels/CoursePanel";
-import { Segment } from "@/components/Course/Segment";
 
 interface CompanyData {
   id: number;
@@ -38,24 +32,7 @@ const Home = ({user, company, courses}: HomeProps)=> {
   const router = useRouter();
   return (
     <div className={styles.body}>
-      <HomeAside active="Home" />
-      <div className={styles.userContentContainer}>
-        <main className={styles.userContent}>
-          <ProgressBar points={user.pontuation} remainingPoints={200} level={user.level} />
-          <SearchBar />
-          <CoursePanel title="Your courses">
-              {courses.map((element: any)=>(
-                <Course backgroundImage={element.image} name={element.name} description={element.description} courseId={element.id}/>
-              ))}
-          </CoursePanel>
-          <div className={styles.discoverMore}>
-            <h3>Discover More</h3>
-            <div className={styles.improvementAreas}>
-              <Segment segmentName="Information Technology" icon="🫧" />
-            </div>
-          </div>
-        </main>
-      </div>
+      
     </div>
   );
 }

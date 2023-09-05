@@ -111,7 +111,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     if (!token) {
       return {
         redirect: {
-          destination: '/login',
+          destination: '/auth/login',
           permanent: false,
         },
       };
@@ -121,7 +121,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     if(!userId){
       return {
         redirect: {
-          destination: '/login',
+          destination: '/auth/login',
           permanent: false,
         },
       };

@@ -4,10 +4,11 @@ type Props = {
     icon: string
     name: string,
     data: string,
-    action: string
+    action: string,
+    clicked: string
 }
 
-export const PanelBlock  = ({icon, name, data,action}: Props)=>{
+export const PanelBlock  = ({icon, name, data,action, clicked}: Props)=>{
     return (
         <div className={styles.panelBlock}>
             <div className={styles.infoArea}>
@@ -24,7 +25,7 @@ export const PanelBlock  = ({icon, name, data,action}: Props)=>{
                 </div>
             </div>
             <div className={styles.footer}>
-                <a href="a">{action}</a>
+                <a href={clicked}>{action}</a>
             </div>
         </div>
     )

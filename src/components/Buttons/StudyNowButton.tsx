@@ -1,4 +1,4 @@
-import styles from '../styles/studyNowButton.module.css';
+import styles from '@/styles/studyNowButton.module.css';
 
 type Props = {
     onClick: (e: React.FormEvent)=>void

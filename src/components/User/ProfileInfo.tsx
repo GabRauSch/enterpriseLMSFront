@@ -1,5 +1,5 @@
-import styles from '../styles/profileInfo.module.css';
-import { InfoAreaButton } from './InfoAreaButton';
+import styles from '@/styles/profileInfo.module.css';
+import { InfoAreaButton } from '@/components/Buttons/InfoAreaButton';
 import { ProfileDetails } from './ProfileDetails';
 
 type ProfileProps = {

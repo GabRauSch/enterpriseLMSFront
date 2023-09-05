@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import styles from '@/styles/courseId.module.css'
-import { Module } from '@/components/Module';
-import { ProgressModules } from '@/components/ProgressModules';
+import { ProgressModules } from '@/components/Course/ProgressModules';
+import { Module } from '@/components/Course/Module';
 
 function Course() {
     const router = useRouter();

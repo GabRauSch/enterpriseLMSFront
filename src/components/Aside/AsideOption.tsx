@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import styles from '../styles/asideOption.module.css'
+import styles from '@/styles/asideOption.module.css'
 type Props = {
     name: string,
     active: boolean,
