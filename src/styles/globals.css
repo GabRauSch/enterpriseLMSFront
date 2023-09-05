@@ -16,3 +16,18 @@ body{
     --contrast-button-hover: #c0392b;
     --transition:  all ease .2s
 }
+.errorPanel{
+    background-color: rgba(200, 30, 30, 0.8);
+    position: absolute;
+    top: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    width: 200px;
+    box-shadow: var(--drop-shadow);
+}
+.errorTitle{
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}

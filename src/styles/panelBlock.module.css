@@ -1,9 +1,11 @@
 .panelBlock{
     padding: 20px;
-    box-shadow: var(--drop-shadow);
-    max-width: 300px;
+    border: 1px solid #999;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
+    margin: 10px;
 }
 .infoArea{
     display: flex;

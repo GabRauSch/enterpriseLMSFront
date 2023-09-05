@@ -11,6 +11,8 @@ import { getUserIdFromToken } from '@/helpers/decodeToken';
 import { getUserById } from '@/apis/User';
 import { getCompanyById } from '@/apis/Company';
 import { getUserAquisitions } from '@/apis/Subscriptions';
+import { SearchBar } from '@/components/SearchBar';
+import { FilterOption } from '@/components/FilterOption';
 
 type CoursesProps = {
   user: any,
@@ -24,8 +26,8 @@ const Courses = ({user, company, courses}: CoursesProps) => {
         <div className={styles.body}>
             <HomeAside active="Courses"/>
             <div className={styles.userContentContainer}>
-                <HomeHeader companyName={company.name} profilePhoto={user.profilePhoto}/>
                 <main className={styles.userContent}>
+                    <SearchBar/>
                     <CoursePanel title="In progress ▶️">
                         {courses.map((el: any)=>{
                           if(el.progress > 0){
@@ -39,6 +41,9 @@ const Courses = ({user, company, courses}: CoursesProps) => {
                             return <Course backgroundImage={el.image} description={el.description} name={el.name} progress={el.progress} courseId={el.id}/>
                           }
                         })}
+                        <div className={styles.addNewCourse}>
+                          + Adicionar mais
+                        </div>
                     </CoursePanel>
                 </main>
             </div>

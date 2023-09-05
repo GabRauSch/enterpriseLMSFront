@@ -55,6 +55,7 @@ const Home = ({user, company, courses}: HomeProps)=> {
       <div className={styles.userContentContainer}>
         <main className={styles.userContent}>
             <h1>Painel</h1>
+            <SearchBar />
             <AdminPanel />
         </main>
       </div>

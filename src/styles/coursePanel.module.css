@@ -1,6 +1,9 @@
 
 .coursePanel {
     margin-top: 20px;
+    box-shadow: var(--drop-shadow);
+    padding: 20px;
+    border-radius: 10px;
 }
 .courses {
     display: flex;

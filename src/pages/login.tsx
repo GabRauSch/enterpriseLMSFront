@@ -5,10 +5,18 @@ import stylesRe from '../styles/submitButton.module.css';
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
 import { getUserIdFromToken } from '@/helpers/decodeToken';
+import { ErrorPanel } from '@/components/ErrorPanel';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const router = useRouter()
+  const [errorMessage, setErrorMessage] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+
+  const router = useRouter();
+  const toggleVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,8 +28,12 @@ const Login = () => {
       if(id){
         router.push('/home');
       }
-    } 
+    } else{
+      setErrorMessage('Falha ao fazer login');
+      setTimeout(()=>{setErrorMessage('')}, 5000)
+    }
   };
+
 
   return (
     <div className={styles.body}>
@@ -29,15 +41,25 @@ const Login = () => {
         <h2>Appexia Login</h2>
         <form action="#" method="POST" id="login-form">
           <label>Email</label>
-          <input type="text" id="username" name="username" required
-            onChange={(e) =>setEmail(e.target.value)}/>
+          <div className={styles.inputContainer}>
+            <input type="text" id={styles.email} name="email" required 
+              onChange={(e) =>setEmail(e.target.value)}/>
+          </div>
+          
           <label>Password</label>
-          <input
-            type="password" id="password" name="password" required
-            onChange={(e) =>setPassword(e.target.value)}/>
+          <div className={styles.inputContainer}>
+            <input type={showPassword ? 'text' : 'password'} id={styles.password} name="password" 
+              required value={password} onChange={(e) => setPassword(e.target.value)}
+            />
+            <div className={styles.olhoIcon} onClick={toggleVisibility}>
+              {showPassword ? '🙉' : '🙈'}
+            </div>
+          </div>
           <input type="submit" className={stylesRe.submitButton}onClick={(e) => {handleSubmit(e);}} value="login"/>
         </form>
       </div>
+      <ErrorPanel errorMessage={errorMessage} display={errorMessage ? 'block' : 'none'} />
+
     </div>
   );
 };

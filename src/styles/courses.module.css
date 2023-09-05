@@ -18,3 +18,20 @@
 .userContent h2 {
     font-size: 24px;
 }
+.addNewCourse{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #999;
+    border-radius: 10px;
+    margin: 10px;   
+    width: 250px;
+    cursor: pointer;
+    font-weight: normal;
+    transition: all ease .1s;
+    user-select: none;
+}
+.addNewCourse:hover{
+    border: 1px solid #009;
+    font-size: 17px
+}
