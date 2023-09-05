@@ -6,7 +6,18 @@ const authorization = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwia
 export const getUserById = async (userId: number) => {
   try {
     const response = await axios.get(`${endpoint}/${userId}`);
-    console.log('response', response)
+    if (!response.data) {
+      return null;
+    }
+    
+    return response.data;
+  } catch (error) {
+    return null;
+  }
+};
+export const getUsersByCompanyId = async (companyId: number) => {
+  try {
+    const response = await axios.get(`http://localhost:3001/users/${companyId}`);
     if (!response.data) {
       return null;
     }

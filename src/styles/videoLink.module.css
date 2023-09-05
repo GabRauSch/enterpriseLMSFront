@@ -1,0 +1,15 @@
+
+.videoItem{
+    box-shadow: var(--drop-shadow);
+    padding: 20px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+.videoItem img{
+    margin-right: 10px;
+}
+
+.videoItem:hover{
+    background-color: #e0e0e0;
+}

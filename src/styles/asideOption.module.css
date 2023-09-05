@@ -1,14 +1,22 @@
 
 .navLink {
-    transition: all ease .2s;
-    text-decoration: none;
+    transition: var(--transition);
     display: block;
     padding: 10px;
-    color: #000;
     border-radius: 10px;
+    margin-top: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+.navLink a{
+    text-decoration: none;
+    color: #000;
 }
 .navLink:hover,
 #active{
-    background-color: #0056b3;
+    background-color: var(--button-hover);
+}
+.navLink:hover a,
+#active a{
     color: #fff;
 }

@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    overflow-x: hidden;
+}
+
+:root{
+    --background-color: #fff;
+    --button: #0056b3;
+    --button-hover: #004091;
+    --drop-shadow: 0 2px 4px #555;
+    --area-background: #0056b3;
+    --contrast-button: #e74c3c;
+    --contrast-button-hover: #c0392b;
+    --transition:  all ease .2s
+}

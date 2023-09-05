@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import styles from "../styles/course.module.css";
 import { StudyNowButton } from "@/components/StudyNowButton";
 
@@ -5,17 +6,30 @@ type Props = {
     backgroundImage: string,
     name: string,
     description: string,
-    progress?: string
+    courseId: number,
+    progress?: number
 }
 
-export const Course = ({backgroundImage, name, description, progress}: Props)=>{
+export const Course = ({backgroundImage, name, description, courseId, progress}: Props)=>{
+    if(progress){
+        progress = progress * 100
+    }
+
+    const router = useRouter()
+    const handleClick = async (e: React.FormEvent) => {
+        e.preventDefault();
+        router.push(`/course/${courseId}`);
+    };
+
     return (
         <div className={styles.course}>
-            <div className={styles.courseImage} style={{backgroundImage: `url(${backgroundImage})`}}></div>
+            <div className={styles.courseImage} style={{backgroundImage: `url(/${backgroundImage})`}}></div>
             <h4>{name}</h4>
-            <p>{progress}</p>
-            <p>{description}</p>
-            <StudyNowButton />
+            <div className={styles.courseInformation}>
+                {progress ? <p> {progress}% </p>: ''}
+                <p>{description}</p>
+                <StudyNowButton onClick={(e)=>{handleClick(e)}}/>
+            </div>
         </div>
     )
 }

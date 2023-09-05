@@ -10,7 +10,7 @@ export const CoursePanel = ({title, children}: Props)=>{
     return (
         <div className={styles.coursePanel}>
             <h3>{title} </h3>
-            <div className={styles.courses} style={{backgroundColor: "red"}}>
+            <div className={styles.courses}>
                 {children}
             </div>
         </div>

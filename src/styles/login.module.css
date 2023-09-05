@@ -13,7 +13,7 @@
     background-color: #ffffff;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--drop-shadow);
     min-width: 300px;
 }
 

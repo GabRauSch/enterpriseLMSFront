@@ -20,3 +20,21 @@ export const getCompanyById = async (companyId: number) => {
     return null;
   }
 };
+
+export const countEmployees = async (companyId: number) => {
+  try {
+    const response = await axios.get(`${endpoint}/employees/count/${companyId}`, {
+        headers: {
+            Authorization: authorization
+        }
+    });
+    if (!response.data) {
+      return null;
+    }
+    
+    return response.data;
+  } catch (error) {
+    console.error("An error occurred:", error);
+    return null;
+  }
+};

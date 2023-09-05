@@ -1,7 +1,11 @@
 import styles from '../styles/studyNowButton.module.css';
 
-export const StudyNowButton = ()=>{
+type Props = {
+    onClick: (e: React.FormEvent)=>void
+}
+
+export const StudyNowButton = ({onClick}: Props)=>{
     return (
-        <button className={styles.courseButton}>Study Now</button>
+        <button className={styles.courseButton} onClick={onClick}>Study Now</button>
     )
 }

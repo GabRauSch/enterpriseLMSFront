@@ -1,6 +1,14 @@
+import { getCompanyById } from '@/apis/Company';
+import { getUserAquisitions } from '@/apis/Subscriptions';
+import { getUserById } from '@/apis/User';
 import checkAuthentication from '@/helpers/checkAuth';
-import styles from '@/styles/videoDisplay.module.css';
+import { getUserIdFromToken } from '@/helpers/decodeToken';
 import { GetServerSidePropsContext } from 'next';
+import {parse} from 'cookie';
+
+import styles from '@/styles/videoId.module.css';
+import { ClassHeader } from '@/components/ClassHeader';
+import { SectionModule } from '@/components/SectionModule';
 
 const videoDisplay = ()=>{
     // function onYouTubeIframeAPIReady() {
@@ -18,19 +26,12 @@ const videoDisplay = ()=>{
 
     return (
         <div className={styles.body}>
-            <header className={styles.header}>
-                <div className={styles.logo}>Appexia</div>
-                <div className={styles.container}>
-                    <a>Aula 1 - matando uma cabra por dia</a>
-                </div>
-                <div className={styles.options}>
-                    <img src="dots.png" alt="options" width="20px"/>
-                </div>
-            </header>
+            <ClassHeader companyName="teste" classTitle="aula 1"/>
+            
             <div className={styles.page}>
                 <section className={styles.mainContent}>
                     <div className={styles.videoPlayerPanel}>
-                        <div id="youtube-player">
+                        <div id={styles.youtubePlayer}>
                         </div>
                     </div>
                     <div className={styles.discussion}>
@@ -38,7 +39,7 @@ const videoDisplay = ()=>{
                             <div className={styles.searchArea}>
                                 <input type="text" />
                                 <div className={styles.searchButton}>
-                                    <img src="search.png" alt="search" width="20px" />
+                                    <img src="/search.png" alt="search" width="20px" />
                                 </div>
                             </div>
                             <h2>All questions</h2>
@@ -70,7 +71,7 @@ const videoDisplay = ()=>{
                                             <p>How can I marry a ginger?</p>
                                         </div>
                                         <div className={styles.questionData}>
-                                            <p className={styles.writer}>Matheusinho</p>
+                                            <div className={styles.writer}>Matheusinho</div>
                                             <p className={styles.timeAgo}>4 years ago</p>
                                         </div>
                                     </div>
@@ -93,42 +94,8 @@ const videoDisplay = ()=>{
                         <p>X</p>
                     </div>
                     <div className={styles.sections}>
-                        <div className={styles.section}>
-                            <div className={styles.sectionHeader}>
-                                <div className={styles.sectionInfo}>
-                                    <h3>Section 1 - getting started</h3>
-                                    <p>0/5</p>
-                                </div>
-                                <div className={styles.sectionButton}>
-                                    <img src="down-arrow.png" alt="down-arrow" width="10px" />
-                                </div>
-                            </div>
-                            <div className={styles.sectionContent}>
-                                <div className={styles.sectionCheck}><input type="checkbox" /></div>
-                                <div className={styles.sectionContentInformation}>
-                                    <h3>1. Matando a bezerra</h3>
-                                    <div className={styles.sectionInformationDuration}>3 min</div>
-                                </div>
-                            </div>
-                            <div className={styles.sectionContent}>
-                                <div className={styles.sectionCheck}><input type="checkbox" /></div>
-                                <div className={styles.sectionContentInformation}>
-                                    <h3>2. Metendo no seu amigo tiktoker</h3>
-                                    <div className={styles.sectionInformationDuration}>3 min</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={styles.section}>
-                            <div className={styles.sectionHeader}>
-                                <div className={styles.sectionInfo}>
-                                    <h3>Section 1 - getting started</h3>
-                                    <p>0/5</p>
-                                </div>
-                                <div className={styles.sectionButton}>
-                                    <img src="down-arrow.png" alt="down-arrow" width="10px" />
-                                </div>
-                            </div>
-                        </div>
+                        <SectionModule sectionTitle='Section 1 - teste' totalVideos={5} videoCount={1}/>
+                        
                     </div>
                 </aside>
             </div>
@@ -138,9 +105,10 @@ const videoDisplay = ()=>{
 }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-    const isAuthenticated = await checkAuthentication(context);
-  
-    if (!isAuthenticated) {
+    const cookies = parse(context.req.headers.cookie || '');
+    const token = cookies.access_token || null;
+    
+    if (!token) {
       return {
         redirect: {
           destination: '/login',
@@ -149,10 +117,26 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
       };
     }
   
+    const userId = getUserIdFromToken(token);
+    if(!userId){
+      return {
+        redirect: {
+          destination: '/login',
+          permanent: false,
+        },
+      };
+    }
+    
+    const user = await getUserById(parseInt(userId))
+    console.log(user);
+    const companyId = user.companyId
+    const company = await getCompanyById(companyId);
+    const courses = await getUserAquisitions(parseInt(userId))
+  
     return {
-      props: {}
+      props: {user, company, courses}
     };
-  }
+}
 
 
 export default videoDisplay

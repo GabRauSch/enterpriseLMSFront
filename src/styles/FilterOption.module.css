@@ -1,0 +1,17 @@
+.filterOption {
+    padding: 10px;
+    background-color: var(--button-hover);
+    border-radius: 10px;
+    color: #fff;
+    display: flex;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.filterOption span{
+    margin-left: 10px;
+    text-shadow: 0px 0px 2px var(--button-hover);
+    transition: var(--transition)
+}
+.filterOption span:hover{
+    color: red;
+}

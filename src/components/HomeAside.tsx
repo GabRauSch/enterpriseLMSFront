@@ -8,15 +8,18 @@ type Props = {
 export const HomeAside  = ({active}: Props)=>{
     return (
         <aside className={styles.userAside}>
-          <nav>
-              {/* <img src="appexia.png" alt="Appexia" width="20px"> */}
-              <ul>
-                <AsideOption name="Home" active={active == "Home" ? true : false } symbol="heyyo"/>
-                <AsideOption name="Courses" active={active == "Courses" ? true : false } symbol="heyyo"/>
-                <AsideOption name="Company" active={active == "Company" ? true : false } symbol="heyyo"/>
-                <AsideOption name="Profile" active={active == "Profile" ? true : false } symbol="heyyo"/>
-              </ul>
-          </nav>
+            {/* <img src="appexia.png" alt="Appexia" width="20px"> */}
+            <ul className={styles.asideOptions}>
+              <AsideOption name="Home" active={active == "Home" ? true : false } symbol="heyyo"/>
+              <AsideOption name="Courses" active={active == "Courses" ? true : false } symbol="heyyo"/>
+              <AsideOption name="Company" active={active == "Company" ? true : false } symbol="heyyo"/>
+              <AsideOption name="Profile" active={active == "Profile" ? true : false } symbol="heyyo"/>
+              <AsideOption name="Search" active={active == "Search" ? true : false } symbol="heyyo"/>
+              <AsideOption name="Admin" active={active == "Admin" ? true : false } symbol="heyyo"/>
+              <AsideOption name="Creator" active={active == "Creator" ? true : false } symbol="heyyo"/>
+              <AsideOption name="Store" active={active == "Store" ? true : false } symbol="heyyo"/>
+
+            </ul>
       </aside>
     )
 }

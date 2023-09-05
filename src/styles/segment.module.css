@@ -7,12 +7,13 @@
     cursor: pointer;
     font-size: 16px;
     padding: 10px;
-    box-shadow: 0px 2px 2px #999;
+    box-shadow: var(--drop-shadow);
     border-radius: 10px;
-    transition: all ease .2s;
+    transition: var(--transition)
 }
 .area:hover{
-    background-color: #007bff;
+    background-color: var(--button-hover);
+    color: #fff
 }
 .areaIcon {
     font-size: 20px;

@@ -1,16 +1,22 @@
-import styles from '../styles/companyInfo.module.css';
-import { CompanyDetails } from './CompanyDetails';
+import styles from '../styles/profileInfo.module.css';
 import { InfoAreaButton } from './InfoAreaButton';
 import { ProfileDetails } from './ProfileDetails';
 
-export const ProfileInfo = ()=>{
+type ProfileProps = {
+    name: string,
+    position: string,
+    segment: string,
+    pontuation: number
+}
+
+export const ProfileInfo = ({name, position, segment, pontuation}: ProfileProps)=>{
     return (
-        <div className={styles.companyInfo}>
-            <div className={styles.companyLogo}>
-                {/* <img src="logoCompanyExample.png" alt="Company Logo" width="100" /> */}
+        <div className={styles.profileInfo}>
+            <div className={styles.profileLogo}>
+                {/* <img src="logoprofileExample.png" alt="profile Logo" width="100" /> */}
             </div>
-            <ProfileDetails name="Juninho" position={12} department="women" points={2} />
-            <div className={styles.buttonsCompany}>
+            <ProfileDetails name={name} position={position} segment={segment} points={pontuation} />
+            <div className={styles.buttonsProfile}>
                 <InfoAreaButton name="Contact administration"/>
                 <InfoAreaButton name="Suggest course"/>
             </div>

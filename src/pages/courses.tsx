@@ -7,25 +7,38 @@ import styles from '@/styles/courses.module.css';
 import { GetServerSidePropsContext } from 'next';
 import checkAuthentication from '@/helpers/checkAuth';
 import { parse } from 'cookie';
+import { getUserIdFromToken } from '@/helpers/decodeToken';
+import { getUserById } from '@/apis/User';
+import { getCompanyById } from '@/apis/Company';
+import { getUserAquisitions } from '@/apis/Subscriptions';
 
-const Courses = () => {
+type CoursesProps = {
+  user: any,
+  company: any,
+  courses: any
+}
+
+
+const Courses = ({user, company, courses}: CoursesProps) => {
     return (
         <div className={styles.body}>
             <HomeAside active="Courses"/>
             <div className={styles.userContentContainer}>
-                <HomeHeader companyName='Feiedo'/>
+                <HomeHeader companyName={company.name} profilePhoto={user.profilePhoto}/>
                 <main className={styles.userContent}>
                     <CoursePanel title="In progress ▶️">
-                        <Course backgroundImage='teste' description='Test message for a course that is available for the user to see' name='Test coursee' progress='45%'/>
+                        {courses.map((el: any)=>{
+                          if(el.progress > 0){
+                            return <Course backgroundImage={el.image} description={el.description} name={el.name} progress={el.progress} courseId={el.id}/>
+                          }
+                        })}
                     </CoursePanel>
                     <CoursePanel title="Subscribed 🎟️">
-                        <Course backgroundImage='teste' description='Test message for a course that is available for the user to see' name='Test coursee' progress='45%'/>
-                    </CoursePanel>
-                    <CoursePanel title="Favourites ⭐">
-                        <Course backgroundImage='teste' description='Test message for a course that is available for the user to see' name='Test coursee' progress='45%'/>
-                    </CoursePanel>
-                    <CoursePanel title="Finished ✅">
-                        <Course backgroundImage='teste' description='Test message for a course that is available for the user to see' name='Test coursee' progress='45%'/>
+                    {courses.map((el: any)=>{
+                          if(el.progress == 0){
+                            return <Course backgroundImage={el.image} description={el.description} name={el.name} progress={el.progress} courseId={el.id}/>
+                          }
+                        })}
                     </CoursePanel>
                 </main>
             </div>
@@ -47,8 +60,23 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     };
   }
 
+  const userId = getUserIdFromToken(token);
+  if(!userId){
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    };
+  }
+  
+  const user = await getUserById(parseInt(userId))
+  const companyId = user.companyId
+  const company = await getCompanyById(companyId);
+  const courses = await getUserAquisitions(parseInt(userId))
+
   return {
-    props: {}
+    props: {user, company, courses}
   };
 }
 

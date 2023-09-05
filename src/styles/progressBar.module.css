@@ -1,29 +1,33 @@
 
 .progressBar {
     margin-top: 20px;
-    background-color: #f4f4f4;
-    height: 20px;
     border-radius: 10px;
-    position: relative;
-    overflow: hidden;
+    display: flex;
 }
 
 .progress {
-    height: 100%;
-    width: 0;
-    background-color: #007bff;
-    border-radius: 10px 0 0 10px;
-    position: absolute;
-    top: 0;
-    left: 0;
+    background-color: red;
+    height: 8px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 999;
 }
 
 
 .remainingPoints{
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0 10px;
-    line-height: 20px;
-    color: #007bff;
+    background-color: #777;
+    flex: 1;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.currentProgrees{
+    cursor: pointer;
+    background-color: var(--contrast-button);
+    height: 18px;
+    width: 18px;
+    border-radius: 100%;
+    margin-right: -10px
 }

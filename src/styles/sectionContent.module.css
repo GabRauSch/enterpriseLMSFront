@@ -1,0 +1,16 @@
+
+.sectionContent{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+}
+.sectionContent input{
+    margin-right: 20px;
+}
+
+.sectionContentInformation{
+    font-size: 13px;
+}
+.sectionInformationDuration{
+    font-size: 10px;
+}

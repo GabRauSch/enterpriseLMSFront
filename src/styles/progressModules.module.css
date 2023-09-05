@@ -1,0 +1,32 @@
+
+.progress {
+    position: relative;
+    flex: 1;
+    background-color: #ddd;
+    border-radius: 10px;
+    margin-top: 10px;
+    height: 20px;
+}
+.progressBar{
+    background-color: var(--area-background);
+    height: 100%;
+    border-radius: 10px;
+    text-align: end;
+    color: #fff;
+    position: absolute;
+}
+.progressBarDiv{
+    border-right: 2px solid #000;
+    position: absolute;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 12px;
+}
+.progressBarDiv::after{
+    content: "Modulo X";
+    position: absolute;
+    font-size: 12px;
+    bottom: -20px
+}

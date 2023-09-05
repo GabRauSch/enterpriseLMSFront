@@ -1,0 +1,17 @@
+.searchBar{
+    background-color: var(--background-color);
+    border-radius: 10px;
+    box-shadow: var(--drop-shadow);
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    max-width: 400px;
+    height: fit-content;
+}
+.searchBar input{
+    flex: 1;
+    outline: none;
+    border: 0;
+    height: 30px;
+    font-size: 15px;
+}

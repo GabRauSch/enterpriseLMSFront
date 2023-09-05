@@ -16,6 +16,8 @@ import { serialize } from 'cookie';
 import { getUserById } from "@/apis/User";
 import { getUserIdFromToken } from "@/helpers/decodeToken";
 import { getCompanyById } from "@/apis/Company";
+import { getUserAquisitions } from "@/apis/Subscriptions";
+import { SearchBar } from "@/components/SearchBar";
 
 interface CompanyData {
   id: number;
@@ -33,33 +35,34 @@ interface CompanyData {
 
 interface HomeProps {
   user: any;
-  company: any
+  company: any,
+  courses: any
 }
 
-const Home = ({user, company}: HomeProps)=> {
-  const router = useRouter()
+const Home = ({user, company, courses}: HomeProps)=> {
+  const router = useRouter();
+
   const handleLogout = async (e: React.FormEvent) => {
     e.preventDefault();
     logout();
     router.push('/login');
   };
 
-  console.log(user, company)
-
   return (
     <div className={styles.body}>
       <HomeAside active="Home" />
       <div className={styles.userContentContainer}>
-        <HomeHeader companyName={company.name}/>
         <main className={styles.userContent}>
-          <ProgressBar points={10} remainingPoints={200} level={4} />
-          <CoursePanel title="In Progress">
-              <Course backgroundImage="" name="Teste" description="Teste"/>
+          <ProgressBar points={user.pontuation} remainingPoints={200} level={user.level} />
+          <SearchBar />
+          <CoursePanel title="Your courses">
+              {courses.map((element: any)=>(
+                <Course backgroundImage={element.image} name={element.name} description={element.description} courseId={element.id}/>
+              ))}
           </CoursePanel>
           <div className={styles.discoverMore}>
             <h3>Discover More</h3>
-            <button onClick={(e)=>{handleLogout(e)}}>logout</button>
-            <div className={styles.improvementAreas} style={{ backgroundColor: "red" }}>
+            <div className={styles.improvementAreas}>
               <Segment segmentName="Information Technology" icon="🫧" />
             </div>
           </div>
@@ -82,8 +85,8 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     };
   }
 
-  const id = getUserIdFromToken(token);
-  if(!id){
+  const userId = getUserIdFromToken(token);
+  if(!userId){
     return {
       redirect: {
         destination: '/login',
@@ -92,11 +95,14 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     };
   }
   
-  const user = await getUserById(parseInt(id))
+  const user = await getUserById(parseInt(userId))
+  console.log(user);
   const companyId = user.companyId
-  const company = await getCompanyById(companyId)
+  const company = await getCompanyById(companyId);
+  const courses = await getUserAquisitions(parseInt(userId))
+
   return {
-    props: {user, company}
+    props: {user, company, courses}
   };
 }
 

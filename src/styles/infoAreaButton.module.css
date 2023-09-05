@@ -1,14 +1,16 @@
 .buttonOption {
-    background-color: #e74c3c;
+    background-color: var(--contrast-button);
     color: #fff;
     border: none;
     padding: 8px 15px;
     border-radius: 3px;
     cursor: pointer;
     font-size: 16px;
-    transition: all ease 0.3s;
+    transition: var(--transition);
+    margin-bottom: 10px;
+    width: 200px;
 }
 
 .buttonOption:hover {
-    background-color: #c0392b;
+    background-color: var(--contrast-button-hover);
 }

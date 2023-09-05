@@ -1,0 +1,33 @@
+.panelBlock{
+    padding: 20px;
+    box-shadow: var(--drop-shadow);
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+.infoArea{
+    display: flex;
+}
+.iconArea{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+.dataArea{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.name{
+    font-weight: bold;
+}
+.footer{
+    margin-top: 10px;
+    text-align: end;
+}
+.footer a{
+    text-decoration: none;
+}
