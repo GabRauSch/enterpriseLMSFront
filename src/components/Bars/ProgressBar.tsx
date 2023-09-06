@@ -1,4 +1,4 @@
-import styles from "@/styles/progressBar.module.css";
+import styles from "@/styles/components/bars/progressBar.module.css";
 
 type Props = {
     level: number,

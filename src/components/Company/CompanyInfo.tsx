@@ -1,4 +1,4 @@
-import styles from '@/styles/companyInfo.module.css';
+import styles from '@/styles/components/company/companyInfo.module.css';
 import { CompanyDetails } from './CompanyDetails';
 import { InfoAreaButton } from '@/components/Buttons/InfoAreaButton';
 

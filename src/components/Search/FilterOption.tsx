@@ -1,4 +1,4 @@
-import styles from '@/styles/FilterOption.module.css';
+import styles from '@/styles/components/search/FilterOption.module.css';
 
 type Props = {
     name: string

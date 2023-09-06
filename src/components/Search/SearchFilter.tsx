@@ -1,4 +1,4 @@
-import styles from '@/styles/SearchFilter.module.css'
+import styles from '@/styles/components/search/SearchFilter.module.css'
 import { FilterOption } from './FilterOption'
 
 export const SearchFilter = ()=>{

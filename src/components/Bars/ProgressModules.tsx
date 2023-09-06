@@ -1,4 +1,4 @@
-import styles from '@/styles/progressModules.module.css'
+import styles from '@/styles/components/bars/progressModules.module.css'
 
 type Props = {
     progressDivision: number[],

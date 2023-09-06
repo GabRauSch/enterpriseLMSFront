@@ -1,4 +1,4 @@
-import styles from "@/styles/homeAside.module.css";
+import styles from "@/styles/components/aside/homeAside.module.css";
 import { AsideOption } from "@/components/Aside/AsideOption";
 import { useRouter } from "next/router";
 import { logout } from "@/apis/Auth";

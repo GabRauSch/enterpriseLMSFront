@@ -1,4 +1,4 @@
-import styles from '@/styles/store.module.css';
+import styles from '@/styles/pages/store.module.css';
 
 import { logout } from "@/apis/Auth";
 import { useRouter } from "next/router";

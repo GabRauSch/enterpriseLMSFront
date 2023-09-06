@@ -1,5 +1,5 @@
+import styles from "@/styles/components/course/course.module.css";
 import { useRouter } from "next/router";
-import styles from "@/styles/course.module.css";
 import { StudyNowButton } from "@/components/Buttons/StudyNowButton";
 
 type Props = {

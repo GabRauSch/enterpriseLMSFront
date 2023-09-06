@@ -17,7 +17,7 @@ export const ConfirmMessage = ({ title, options, display, onConfirm, onCancel }:
           {options.map((el, key) => (
             <div
               className='confirmMessage-option'
-              style={{ backgroundColor: key === 0 ? 'green' : 'red' }}
+              style={{ backgroundColor: key === 0 ? 'var(--button)' : 'var(--contrast-button)' }}
               onClick={() => (key === 0 ? onConfirm() : onCancel())}
               key={key}
             >

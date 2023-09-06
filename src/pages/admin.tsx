@@ -1,18 +1,15 @@
-import styles from "@/styles/home.module.css";
-import { Course } from "@/components/Course/Course";
+import styles from "@/styles/pages/admin.module.css";
+
 import { logout } from "@/apis/Auth";
 import { useRouter } from "next/router";
 import { GetServerSidePropsContext } from "next";
-import checkAuthentication from "@/helpers/checkAuth";
-import Cookies from "js-cookie";
 
 import { parse } from 'cookie';
-import { serialize } from 'cookie';
 import { getUserById } from "@/apis/User";
 import { getUserIdFromToken } from "@/helpers/decodeToken";
 import { getCompanyById } from "@/apis/Company";
 import { getUserAquisitions } from "@/apis/Subscriptions";
-import { SearchBar } from "@/components/Bars/SearchBar";
+import { SearchBar } from "@/components/Search/SearchBar";
 import { AdminPanel } from "@/components/Panels/AdminPanel";
 import { HomeAside } from "@/components/Aside/HomeAside";
 

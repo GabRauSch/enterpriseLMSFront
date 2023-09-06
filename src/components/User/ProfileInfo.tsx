@@ -1,4 +1,4 @@
-import styles from '@/styles/profileInfo.module.css';
+import styles from '@/styles/components/user/profileInfo.module.css';
 import { InfoAreaButton } from '@/components/Buttons/InfoAreaButton';
 import { ProfileDetails } from './ProfileDetails';
 

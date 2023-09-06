@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '@/styles/coursePanel.module.css';
+import styles from '@/styles/components/panels/coursePanel.module.css';
 
 type Props = {
     title: string,

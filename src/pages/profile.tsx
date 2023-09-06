@@ -1,8 +1,7 @@
-import { HomeHeader } from '@/components/Headers/HomeHeader';
+import styles from '@/styles/pages/profile.module.css';
 
-import styles from '@/styles/profile.module.css';
+import { HomeHeader } from '@/components/Headers/HomeHeader';
 import { GetServerSidePropsContext } from 'next';
-import checkAuthentication from '@/helpers/checkAuth';
 import {parse} from 'cookie'
 import { getUserIdFromToken } from '@/helpers/decodeToken';
 import { getCompanyById } from '@/apis/Company';

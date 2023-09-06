@@ -1,4 +1,4 @@
-import styles from '@/styles/classHeader.module.css'
+import styles from '@/styles/components/headers/classHeader.module.css'
 
 type Props = {
     companyName: string,

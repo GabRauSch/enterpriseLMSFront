@@ -1,4 +1,4 @@
-import styles from '@/styles/panelBlock.module.css'
+import styles from '@/styles/components/panels/panelBlock.module.css'
 
 type Props = {
     icon: string

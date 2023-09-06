@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import styles from '@/styles/courseId.module.css'
-import { ProgressModules } from '@/components/Course/ProgressModules';
+import { ProgressModules } from '@/components/Bars/ProgressModules';
 import { Module } from '@/components/Course/Module';
 
 function Course() {

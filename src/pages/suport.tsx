@@ -1,4 +1,4 @@
-import styles from "@/styles/suport.module.css";
+import styles from "@/styles/pages/suport.module.css";
 import { logout } from "@/apis/Auth";
 import { useRouter } from "next/router";
 import { GetServerSidePropsContext } from "next";

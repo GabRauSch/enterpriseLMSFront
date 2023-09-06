@@ -1,13 +1,13 @@
-import { Course } from '@/components/Course/Course';
+import styles from '@/styles/pages/courses.module.css';
 
-import styles from '@/styles/courses.module.css';
+import { Course } from '@/components/Course/Course';
 import { GetServerSidePropsContext } from 'next';
 import { parse } from 'cookie';
 import { getUserIdFromToken } from '@/helpers/decodeToken';
 import { getUserById } from '@/apis/User';
 import { getCompanyById } from '@/apis/Company';
 import { getUserAquisitions } from '@/apis/Subscriptions';
-import { SearchBar } from '@/components/Bars/SearchBar';
+import { SearchBar } from '@/components/Search/SearchBar';
 import { HomeAside } from '@/components/Aside/HomeAside';
 import { CoursePanel } from '@/components/Panels/CoursePanel';
 

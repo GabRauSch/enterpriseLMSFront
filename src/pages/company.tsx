@@ -1,5 +1,5 @@
+import styles from '@/styles/pages/company.module.css';
 
-import styles from '@/styles/company.module.css';
 import { GetServerSidePropsContext } from 'next';
 import { parse } from 'cookie';
 import { getUserIdFromToken } from '@/helpers/decodeToken';
@@ -10,7 +10,7 @@ import { getPontuationByEmployees } from '@/helpers/Pontuation';
 import { HomeAside } from '@/components/Aside/HomeAside';
 import { HomeHeader } from '@/components/Headers/HomeHeader';
 import { CompanyInfo } from '@/components/Company/CompanyInfo';
-import { Segment } from '@/components/Course/Segment';
+import { Segment } from '@/components/Company/Segment';
 
 type CompanyProps = {
   user: any,

@@ -1,4 +1,4 @@
-import styles from '@/styles/sectionModule.module.css'
+import styles from '@/styles/components/course/sectionModule.module.css'
 import { SectionContent } from './SectionContent'
 
 type Props = {

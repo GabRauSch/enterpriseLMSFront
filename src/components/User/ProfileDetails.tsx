@@ -1,4 +1,4 @@
-import styles from '@/styles/profileDetails.module.css';
+import styles from '@/styles/components/user/profileDetails.module.css';
 
 type Props = {
     name: string,

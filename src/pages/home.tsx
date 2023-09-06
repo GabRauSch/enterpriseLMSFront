@@ -1,4 +1,4 @@
-import styles from "@/styles/home.module.css";
+import styles from "@/styles/pages/home.module.css";
 import { Course } from "@/components/Course/Course";
 import { useRouter } from "next/router";
 import { GetServerSidePropsContext } from "next";
@@ -8,11 +8,11 @@ import { getUserById } from "@/apis/User";
 import { getUserIdFromToken } from "@/helpers/decodeToken";
 import { getCompanyById } from "@/apis/Company";
 import { getUserAquisitions } from "@/apis/Subscriptions";
-import { SearchBar } from "@/components/Bars/SearchBar";
+import { SearchBar } from "@/components/Search/SearchBar";
 import { HomeAside } from "@/components/Aside/HomeAside";
 import { ProgressBar } from "@/components/Bars/ProgressBar";
 import { CoursePanel } from "@/components/Panels/CoursePanel";
-import { Segment } from "@/components/Course/Segment";
+import { Segment } from "@/components/Company/Segment";
 
 interface CompanyData {
   id: number;

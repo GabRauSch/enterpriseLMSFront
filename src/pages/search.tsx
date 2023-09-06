@@ -1,9 +1,9 @@
-import styles from '@/styles/search.module.css'
+import styles from '@/styles/pages/search.module.css'
 
 import { getCompanyById } from "@/apis/Company"
 import { getUserAquisitions } from "@/apis/Subscriptions"
 import { getUserById } from "@/apis/User"
-import { SearchBar } from "@/components/Bars/SearchBar"
+import { SearchBar } from "@/components/Search/SearchBar"
 import { getUserIdFromToken } from "@/helpers/decodeToken"
 import {parse} from 'cookie'
 import { GetServerSidePropsContext } from "next"

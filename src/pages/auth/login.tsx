@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { loginUser } from '@/apis/Auth';
-import styles from '@/styles/login.module.css';
-import stylesRe from '@/styles/submitButton.module.css';
+import styles from '@/styles/pages/login.module.css';
+import stylesRe from '@/styles/components/buttons/submitButton.module.css';
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
 import { getUserIdFromToken } from '@/helpers/decodeToken';

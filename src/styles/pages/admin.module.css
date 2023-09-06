@@ -1,0 +1,15 @@
+.body{
+    display: flex;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    height: 100vh;
+}
+.userContentContainer {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    flex: 1;
+    padding: 20px;
+}

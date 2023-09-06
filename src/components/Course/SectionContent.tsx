@@ -1,4 +1,4 @@
-import styles from '@/styles/sectionContent.module.css'
+import styles from '@/styles/components/course/sectionContent.module.css'
 
 type Props = {
     watched: boolean,

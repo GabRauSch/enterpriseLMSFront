@@ -1,4 +1,4 @@
-import styles from '@/styles/adminPanel.module.css'
+import styles from '@/styles/components/panels/adminPanel.module.css'
 import { PanelBlock } from './PanelBlock'
 
 export const AdminPanel = ()=>{
