@@ -1,20 +1,20 @@
-import styles from '@/styles/components/headers/homeHeader.module.css'
+import styles from '@/styles/components/headers/homeHeader.module.css';
 
-type Props = {
-    companyName: string,
-    profilePhoto: string
-}
-
-export const HomeHeader = ({companyName, profilePhoto}: Props)=>{
+export const HomeHeader = ()=>{
     return (
-        <></>
-        // <header className={styles.userHeader}>
-        //     {/* <div className={styles.companyName}>
-        //         {companyName}
-        //     </div>
-        //     <div className={styles.userProfile}>
-        //         <img src={profilePhoto} alt="User Profile" />
-        //     </div> */}
-        // </header>
+        <div className={styles.homeHeader}>
+            <div>
+                <img src='/notificacao.png' alt='notificacao' />
+            </div>
+            <div>
+                <img src="/certificado.png" alt="certificados"/>
+            </div>
+            <div>
+                <img src="/apoio-suporte.png" alt="suporte" />
+            </div>
+            <div>
+                <img src="/sair.png" alt="logout" />
+            </div>
+        </div>
     )
 }

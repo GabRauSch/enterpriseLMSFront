@@ -1,0 +1,8 @@
+.container {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: var(--drop-shadow);
+    margin-top: 20px;
+}

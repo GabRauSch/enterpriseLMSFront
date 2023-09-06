@@ -5,7 +5,6 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
-    height: 100vh;
 }
 .userContentContainer {
     display: flex;
@@ -44,4 +43,5 @@
 .improvementAreas {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 10px;
 }

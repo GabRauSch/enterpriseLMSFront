@@ -8,7 +8,7 @@ import { getCompanyById } from '@/apis/Company';
 import { getSegmentsByCompanyId } from '@/apis/Segment';
 import { getPontuationByEmployees } from '@/helpers/Pontuation';
 import { HomeAside } from '@/components/Aside/HomeAside';
-import { HomeHeader } from '@/components/Headers/HomeHeader';
+import { HomeHeader } from '@/components/Panels/ProgressPanel';
 import { CompanyInfo } from '@/components/Company/CompanyInfo';
 import { Segment } from '@/components/Company/Segment';
 

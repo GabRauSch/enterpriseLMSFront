@@ -1,0 +1,23 @@
+.squareInfo{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #007BFF;
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+.squareInfoTitle{
+
+    font-size: 15px;
+}
+.squareInfo:hover{
+    background-color: #005BcF;
+}
+.squareInfoData{
+    padding: 10px 0;
+    font-size: 18px;
+}

@@ -8,7 +8,9 @@
 .asideOptions {
     list-style-type: none;
     padding: 0;
-    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
 }
 
 .userAaside nav li {

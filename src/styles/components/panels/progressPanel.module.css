@@ -1,0 +1,63 @@
+.container {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: var(--drop-shadow)
+}
+
+.headerTitle {
+    color: #007BFF;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 21px;
+}
+.headerTitle img{
+    cursor: pointer;
+}
+.userInfo {
+    margin-bottom: 30px;
+}
+.userInfoData{
+    display: flex;
+    gap: 20px;
+}
+
+.progressBar {
+
+    height: 30px;
+    background-color: #eee;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+}
+.pontuation{
+    display: flex;
+    justify-content: space-between;
+}
+
+.infoButton {
+    color: #007BFF;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: end;
+}
+
+.rankings {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#shareItem{
+    width: 15px;
+    height: 15px;
+}

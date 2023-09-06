@@ -12,7 +12,6 @@ export const ProgressBar = ({level, points, remainingPoints}: Props)=>{
     const progressWidth = remainingPoints/points * 100
     return (
         <>
-            <h2>Level: {level} ({remainingPoints} points to next level)</h2>
             <div className={styles.progressBar}>
                 <div className={styles.progress} style={{width: `${progressWidth}%`}}>
                     <div className={styles.currentProgrees} style={{marginLeft: "10px"}}></div>

@@ -10,9 +10,13 @@ import { getCompanyById } from "@/apis/Company";
 import { getUserAquisitions } from "@/apis/Subscriptions";
 import { SearchBar } from "@/components/Search/SearchBar";
 import { HomeAside } from "@/components/Aside/HomeAside";
-import { ProgressBar } from "@/components/Bars/ProgressBar";
 import { CoursePanel } from "@/components/Panels/CoursePanel";
 import { Segment } from "@/components/Company/Segment";
+import { ProgressPanel } from "@/components/Panels/ProgressPanel";
+import { ProgressBar } from "@/components/Bars/ProgressBar";
+import { HomePanel } from "@/components/Panels/HomePanel";
+import { SquareAndIcon } from "@/components/Panels/SquareAndIcon";
+import { HomeHeader } from "@/components/Headers/HomeHeader";
 
 interface CompanyData {
   id: number;
@@ -40,15 +44,27 @@ const Home = ({user, company, courses}: HomeProps)=> {
     <div className={styles.body}>
       <HomeAside active="Home" />
       <div className={styles.userContentContainer}>
+        <HomeHeader />
         <main className={styles.userContent}>
-          <ProgressBar points={user.pontuation} remainingPoints={200} level={user.level} />
-          <SearchBar />
-          <CoursePanel title="Your courses">
-              {courses.map((element: any)=>(
-                <Course backgroundImage={element.image} name={element.name} description={element.description} courseId={element.id}/>
+          <ProgressPanel>
+            <ProgressBar points={user.pontuation} remainingPoints={200} level={user.level} />
+          </ProgressPanel>
+          <div className="container">
+            <h3>Empresa:</h3>
+            <div className="containerContent"></div>
+              <SquareAndIcon iconUrl="mapa.png" title="Trilhas"  />
+              <SquareAndIcon iconUrl="verificar.png" title="Recomendados"  />
+              <SquareAndIcon iconUrl="relogio.png" title="Pendentes"  />
+          </div>
+          <div className="container">
+            <h3>Seus Cursos:</h3>
+            <div className="containerContent">
+              {courses.map((element: any, key: number)=>(
+                <Course key={key} backgroundImage={element.image} name={element.name} description={element.description} courseId={element.id}/>
               ))}
-          </CoursePanel>
-          <div className={styles.discoverMore}>
+            </div>
+          </div>
+          <div className='container'>
             <h3>Discover More</h3>
             <div className={styles.improvementAreas}>
               <Segment segmentName="Information Technology" icon="🫧" />

@@ -36,7 +36,6 @@ export const HomeAside = ({ active }: Props) => {
         onCancel={handleLogoutCancelled}
       />
       <aside className={styles.userAside}>
-         {/* <img src="appexia.png" alt="Appexia" width="20px"> */}
          <ul className={styles.asideOptions}>
           <AsideOption name="Home" active={active == "Home" ? true : false } symbol="heyyo"/>
           <AsideOption name="Courses" active={active == "Courses" ? true : false } symbol="heyyo"/>

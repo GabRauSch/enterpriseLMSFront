@@ -1,6 +1,6 @@
 import styles from '@/styles/pages/profile.module.css';
 
-import { HomeHeader } from '@/components/Headers/HomeHeader';
+import { HomeHeader } from '@/components/Panels/ProgressPanel';
 import { GetServerSidePropsContext } from 'next';
 import {parse} from 'cookie'
 import { getUserIdFromToken } from '@/helpers/decodeToken';

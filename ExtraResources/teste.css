@@ -1,0 +1,24 @@
+ /* Estilos CSS podem ser adicionados aqui para personalização */
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+h1 {
+    font-size: 24px;
+}
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
